@@ -28,7 +28,7 @@ public class BajajfinservhealthApplication {
             // 1. Generate Webhook with your details
             String generateWebhookUrl = "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA";
             // Using your registration number: REG0978
-            WebhookRequest webhookRequest = new WebhookRequest("Your Name", "REG0978", "your.email@example.com");
+            WebhookRequest webhookRequest = new WebhookRequest("M Rajkumar", "22BCE0978", "rajkumar52k4@gmail.com");
             
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
@@ -42,9 +42,9 @@ public class BajajfinservhealthApplication {
                 System.out.println("Webhook URL Received: " + webhookResponse.getWebhookUrl());
                 System.out.println("Access Token Received.");
 
-                // 2. Determine SQL Query based on Registration Number
+                
                 String regNo = webhookRequest.getRegNo();
-                // Extracting the last two digits from "REG0978" -> "78"
+                
                 int lastTwoDigits = Integer.parseInt(regNo.substring(regNo.length() - 2));
                 
                 String finalQuery;
@@ -94,3 +94,4 @@ public class BajajfinservhealthApplication {
         };
     }
 }
+
