@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
@@ -42,9 +41,9 @@ public class BajajfinservhealthApplication {
                 System.out.println("Webhook URL Received: " + webhookResponse.getWebhookUrl());
                 System.out.println("Access Token Received.");
 
-                
+                // 2. Determine SQL Query based on Registration Number
                 String regNo = webhookRequest.getRegNo();
-                
+                // Extracting the last two digits from "REG0978" -> "78"
                 int lastTwoDigits = Integer.parseInt(regNo.substring(regNo.length() - 2));
                 
                 String finalQuery;
@@ -94,4 +93,3 @@ public class BajajfinservhealthApplication {
         };
     }
 }
-
