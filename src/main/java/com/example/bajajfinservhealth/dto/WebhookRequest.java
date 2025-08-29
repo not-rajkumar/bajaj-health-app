@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WebhookResponse {
-    private String webhookUrl;
-    private String accessToken;
+public class WebhookRequest {
+    private String name;
+    private String regNo;
+    private String email;
 }
